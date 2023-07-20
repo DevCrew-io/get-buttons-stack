@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_buttons_stack/get_buttons_stack.dart';
+import 'package:flutter_custom_buttons/flutter_custom_buttons.dart';
 
 void main() {
   runApp(const MyApp());
@@ -115,7 +116,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 AppleSignInButton(isDark: true, isBorderedEnabled: true, onPressed: () {  },),
                 const SizedBox(height: 10,),
                 GithubSignInButton(fontColor: Colors.white, backgroundColor: Colors.black,fontSize: 18, isBorderEnabled: false, alignment: MainAxisAlignment.center, onPressed: () {
-                },)
+                },),
+                const SizedBox(height: 10,),
+                CustomisedButton(icon: Icons.close_fullscreen, title: "Hello", alignment: MainAxisAlignment.center, fontFamily: "Lumanosimo", fontSize: 20, onPressed: () {
+                  print("Good");
+                })
               ],
             ),
           ],

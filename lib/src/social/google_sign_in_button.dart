@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get_buttons_stack/constants.dart';
+import 'package:get_buttons_stack/src/utils/constants.dart';
 
 /// A custom button widget that displays the Google logo and allows users to sign in with Google.
 class GoogleSignInButton extends StatelessWidget {
@@ -87,7 +87,8 @@ class GoogleSignInButton extends StatelessWidget {
                 isCaps ? title.toUpperCase() : title,
                 style: const TextStyle(
                   fontSize: 14,
-                  fontWeight: FontWeight.w600,
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ],

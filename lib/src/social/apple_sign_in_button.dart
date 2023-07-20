@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import '../utils/constants.dart';
 
 /// A custom button widget that displays the Apple logo and allows users to sign in with Apple.
 class AppleSignInButton extends StatelessWidget {

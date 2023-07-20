@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import 'package:get_buttons_stack/src/utils/constants.dart';
 
-/// A custom button widget that displays the GitHub logo and allows users to sign in with GitHub.
-class GithubSignInButton extends StatelessWidget {
+class CustomisedButton extends StatelessWidget {
   /// The title or label of the button.
-  final String title;
+  final String? title;
 
   /// The corner radius of the button.
   final double radius;
@@ -24,6 +23,11 @@ class GithubSignInButton extends StatelessWidget {
   /// The font color of the title text.
   final Color? fontColor;
 
+  final Color? imageColor;
+
+  final bool isElevated;
+  final String? fontFamily;
+
   /// The alignment of the button's content.
   final MainAxisAlignment alignment;
 
@@ -34,33 +38,40 @@ class GithubSignInButton extends StatelessWidget {
   final FontWeight fontWeight;
 
   /// The size of the GitHub logo icon.
-  final double iconSize;
+  final double? iconSize;
 
   /// Flag to indicate if the content of the button should be wrapped.
   final bool isContentWrapped;
 
+  final IconData? icon;
+  final String? imagePath;
   /// Callback function to be executed when the button is pressed.
   ///
   /// The [onPressed] parameter must not be null.
   ///
   final VoidCallback onPressed;
 
-  const GithubSignInButton({
+  const CustomisedButton({
     Key? key,
-    this.title = "Sign in with Github",
+    this.title,
     this.radius = 0,
     this.width,
     this.height = 40,
     this.fontSize = 15,
     this.backgroundColor = Colors.white,
     this.fontColor = Colors.black,
+    this.imageColor,
+    this.isElevated = true,
+    this.fontFamily,
     this.alignment = MainAxisAlignment.start,
     this.isBorderEnabled = false,
     this.fontWeight = FontWeight.w500,
-    this.iconSize = 24,
+    this.iconSize,
     this.isContentWrapped = false,
+    this.icon,
+    this.imagePath,
     required this.onPressed,
-  }) : super(key: key);
+  }) : assert(icon == null || imagePath == null, "You cannot pass both arguments at once"), super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +84,7 @@ class GithubSignInButton extends StatelessWidget {
           onPressed();
         },
         style: ElevatedButton.styleFrom(
+          elevation: isElevated ? null : 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radius),
           ),
@@ -94,24 +106,30 @@ class GithubSignInButton extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // GitHub logo icon
+              icon == null ? Container() : Icon(icon, size: iconSize, color: imageColor,),
+              imagePath == null ? Container() :
               Image(
                 width: iconSize,
                 height: iconSize,
                 fit: BoxFit.fill,
-                image: const AssetImage(
-                  ImagePath.githubLogoWhite,
-                  package: 'get_buttons_stack',
+                image: AssetImage(
+                  imagePath ?? ""
                 ),
-                color: fontColor,
+                color: imageColor,
               ),
-              const SizedBox(
-                width: 12,
-              ),
-              // Text label
-              Text(
-                title,
-                style: TextStyle(fontSize: fontSize, fontWeight: fontWeight),
-              ),
+
+              title == null ? Container() :
+                  Row(
+                    children: [
+                      (icon == null && imagePath == null) ? Container() :
+                      const SizedBox(
+                        width: 12,
+                      ),// Text label
+                      Text(title ?? "",
+                        style: TextStyle(fontSize: fontSize, fontWeight: fontWeight, fontFamily: fontFamily),
+                      ),
+                    ],
+                  ),
             ],
           ),
         ),

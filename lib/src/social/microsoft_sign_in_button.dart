@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import '../utils/constants.dart';
 
 /// A custom button widget that displays the Microsoft logo and allows users to sign in.
 class MicrosoftSignInButton extends StatelessWidget {
@@ -94,8 +94,9 @@ class MicrosoftSignInButton extends StatelessWidget {
                 // ignore: unrelated_type_equality_checks
                 isShortend ? (isCaps == true ? "Sign in".toUpperCase() : "Sign in") : (isCaps == true ? "Sign in with Microsoft".toUpperCase() : "Sign in with Microsoft"),
                 style: const TextStyle(
+                  fontFamily: "Segoe UI",
                   fontSize: 15,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ],

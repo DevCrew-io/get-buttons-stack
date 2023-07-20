@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import '../utils/constants.dart';
 
 /// A custom button widget that displays the Facebook logo and allows users to sign in with Facebook.
 class FacebookSignButton extends StatelessWidget {

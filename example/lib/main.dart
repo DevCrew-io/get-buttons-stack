@@ -56,18 +56,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -117,15 +106,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
                 },),
                 const SizedBox(height: 10,),
-                MicrosoftSignInButton(isShortend: true, withBorder: true, onPressed: () {  },),
+                MicrosoftSignInButton(isShortend: true, isBorderEnabled: true, onPressed: () {  },),
                 const SizedBox(height: 10,),
                 MicrosoftSignInButton(isDark: true, onPressed: () {  },),
                 const SizedBox(height: 10,),
-                AppleSignInButton(alignment: MainAxisAlignment.center, contentWrapped: false, width: 300, withBorder: true, onPressed: () {  },),
+                AppleSignInButton(alignment: MainAxisAlignment.center, isContentWrapped: false, width: 300, isBorderedEnabled: true, onPressed: () {  },),
                 const SizedBox(height: 10,),
-                AppleSignInButton(isDark: true, withBorder: true, onPressed: () {  },),
+                AppleSignInButton(isDark: true, isBorderedEnabled: true, onPressed: () {  },),
                 const SizedBox(height: 10,),
-                GithubSignInButton(fontColor: Colors.white, backgroundColor: Colors.black,fontSize: 18, withBorder: false, alignment: MainAxisAlignment.center, onPressed: () {
+                GithubSignInButton(fontColor: Colors.white, backgroundColor: Colors.black,fontSize: 18, isBorderEnabled: false, alignment: MainAxisAlignment.center, onPressed: () {
                 },)
               ],
             ),

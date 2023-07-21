@@ -113,14 +113,26 @@ class _MyHomePageState extends State<MyHomePage> {
                 const SizedBox(height: 10,),
                 AppleSignInButton(alignment: MainAxisAlignment.center, isContentWrapped: false, width: 300, isBorderedEnabled: true, onPressed: () {  },),
                 const SizedBox(height: 10,),
-                AppleSignInButton(isDark: true, isBorderedEnabled: true, onPressed: () {  },),
+                AppleSignInButton(isDark: true, isBorderedEnabled: true, height: 60, onPressed: () {  },),
                 const SizedBox(height: 10,),
                 GithubSignInButton(fontColor: Colors.white, backgroundColor: Colors.black,fontSize: 18, isBorderEnabled: false, alignment: MainAxisAlignment.center, onPressed: () {
                 },),
                 const SizedBox(height: 10,),
                 CustomisedButton(icon: Icons.close_fullscreen, title: "Hello", alignment: MainAxisAlignment.center, fontFamily: "Lumanosimo", fontSize: 20, onPressed: () {
                   print("Good");
-                })
+                }),
+                NetworkSpinningButton(onPressed: (changeState, state) {
+                  if (state == ButtonState.idle) {
+                    state = ButtonState.spinning;
+                  } else {
+                    state = ButtonState.idle;
+                  }
+                  changeState(state);
+                  /*if (state == ButtonState.idle) {
+                    print("hello");
+                    state = ButtonState.spinning;
+                  }*/
+                }),
               ],
             ),
           ],

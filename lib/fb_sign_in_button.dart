@@ -76,6 +76,7 @@ class FacebookSignButton extends StatelessWidget {
                   ImagePath.fbLogo,
                   package: 'get_buttons_stack',
                 ),
+                // to maintain size of icon of facebook with height of button's size i-e if height of button increases, icon will be set 60% of button's height
                 width: (60 / 100 * height).floorToDouble(),
                 height: (60 / 100 * height).floorToDouble(),
                 fit: BoxFit.fill,

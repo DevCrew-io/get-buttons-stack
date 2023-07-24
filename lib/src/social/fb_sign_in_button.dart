@@ -20,7 +20,7 @@ class FacebookSignButton extends StatelessWidget {
   final double height;
 
   /// Flag to indicate if the content of the button should be wrapped.
-  final bool contentWrapped;
+  final bool isContentWrapped;
 
   /// The alignment of the button's content.
   final MainAxisAlignment alignment;
@@ -38,7 +38,7 @@ class FacebookSignButton extends StatelessWidget {
     this.radius = 0,
     this.width,
     this.height = 40,
-    this.contentWrapped = true,
+    this.isContentWrapped = true,
     this.alignment = MainAxisAlignment.start,
     required this.onPressed,
   }) : super(key: key);
@@ -66,7 +66,7 @@ class FacebookSignButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Row(
             mainAxisSize:
-            contentWrapped ? MainAxisSize.min : MainAxisSize.max,
+            isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
             mainAxisAlignment: alignment,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -76,6 +76,7 @@ class FacebookSignButton extends StatelessWidget {
                   ImagePath.fbLogo,
                   package: 'get_buttons_stack',
                 ),
+                // to maintain size of icon of facebook with height of button's size i-e if height of button increases, icon will be set 60% of button's height
                 width: (60 / 100 * height).floorToDouble(),
                 height: (60 / 100 * height).floorToDouble(),
                 fit: BoxFit.fill,

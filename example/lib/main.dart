@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get_buttons_stack/get_buttons_stack.dart';
-import 'package:flutter_custom_buttons/flutter_custom_buttons.dart';
 
 void main() {
   runApp(const MyApp());
@@ -113,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 const SizedBox(height: 10,),
                 AppleSignInButton(alignment: MainAxisAlignment.center, isContentWrapped: false, width: 300, isBorderedEnabled: true, onPressed: () {  },),
                 const SizedBox(height: 10,),
-                AppleSignInButton(isDark: true, isBorderedEnabled: true, height: 60, onPressed: () {  },),
+                AppleSignInButton(isDark: true, isBorderedEnabled: true, onPressed: () {  },),
                 const SizedBox(height: 10,),
                 GithubSignInButton(fontColor: Colors.white, backgroundColor: Colors.black,fontSize: 18, isBorderEnabled: false, alignment: MainAxisAlignment.center, onPressed: () {
                 },),
@@ -121,17 +120,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 CustomisedButton(icon: Icons.close_fullscreen, title: "Hello", alignment: MainAxisAlignment.center, fontFamily: "Lumanosimo", fontSize: 20, onPressed: () {
                   print("Good");
                 }),
-                NetworkSpinningButton(onPressed: (changeState, state) {
-                  if (state == ButtonState.idle) {
-                    state = ButtonState.spinning;
-                  } else {
-                    state = ButtonState.idle;
-                  }
-                  changeState(state);
-                  /*if (state == ButtonState.idle) {
-                    print("hello");
-                    state = ButtonState.spinning;
-                  }*/
+                NetworkSpinningButton(title: "Network", height: 50, alignment: MainAxisAlignment.center,icon: Icons.access_alarm,onPressed: (changeState, state) {
+                  changeState(ButtonState.spinning);
+                  Future.delayed(const Duration(seconds: 10),() {
+                    changeState(ButtonState.idle);
+                  });
                 }),
               ],
             ),

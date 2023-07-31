@@ -26,6 +26,7 @@ class CustomisedButton extends StatelessWidget {
   final Color? imageColor;
 
   final bool isElevated;
+  final double spacing;
   final String? fontFamily;
 
   /// The alignment of the button's content.
@@ -33,7 +34,8 @@ class CustomisedButton extends StatelessWidget {
 
   /// Flag to indicate if the button should have a border.
   final bool isBorderEnabled;
-
+final Color? borderColor;
+final double? borderWidth;
   /// The font weight of the title text.
   final FontWeight fontWeight;
 
@@ -62,9 +64,12 @@ class CustomisedButton extends StatelessWidget {
     this.fontColor = Colors.black,
     this.imageColor,
     this.isElevated = true,
+    this.spacing = 12,
     this.fontFamily,
     this.alignment = MainAxisAlignment.start,
     this.isBorderEnabled = false,
+    this.borderColor = Colors.transparent,
+    this.borderWidth,
     this.fontWeight = FontWeight.w500,
     this.iconSize,
     this.isContentWrapped = false,
@@ -90,7 +95,7 @@ class CustomisedButton extends StatelessWidget {
           ),
           // Setting the button border if 'withBorder' is true.
           side: isBorderEnabled
-              ? BorderSide(width: 1.5, color: fontColor ?? Colors.black)
+              ? BorderSide(width: borderWidth ?? 0, color: borderColor ?? Colors.black)
               : null,
           foregroundColor: fontColor,
           backgroundColor: backgroundColor,
@@ -122,8 +127,8 @@ class CustomisedButton extends StatelessWidget {
                   Row(
                     children: [
                       (icon == null && imagePath == null) ? Container() :
-                      const SizedBox(
-                        width: 12,
+                      SizedBox(
+                        width: spacing,
                       ),// Text label
                       Text(title ?? "",
                         style: TextStyle(fontSize: fontSize, fontWeight: fontWeight, fontFamily: fontFamily),

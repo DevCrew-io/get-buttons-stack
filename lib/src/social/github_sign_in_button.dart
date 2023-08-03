@@ -24,6 +24,8 @@ class GithubSignInButton extends StatelessWidget {
   /// The font color of the title text.
   final Color? fontColor;
 
+  final String? fontFamily;
+
   /// The alignment of the button's content.
   final MainAxisAlignment alignment;
 
@@ -54,6 +56,7 @@ class GithubSignInButton extends StatelessWidget {
     this.fontSize = 15,
     this.backgroundColor = Colors.white,
     this.fontColor = Colors.black,
+    this.fontFamily,
     this.alignment = MainAxisAlignment.start,
     this.isBorderEnabled = false,
     this.fontWeight = FontWeight.w500,
@@ -110,7 +113,7 @@ class GithubSignInButton extends StatelessWidget {
               // Text label
               Text(
                 title,
-                style: TextStyle(fontSize: fontSize, fontWeight: fontWeight),
+                style: TextStyle(fontSize: fontSize, fontWeight: fontWeight, fontFamily: fontFamily),
               ),
             ],
           ),

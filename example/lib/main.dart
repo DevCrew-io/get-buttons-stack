@@ -119,7 +119,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 const SizedBox(height: 10,),
                 CustomisedButton(icon: Icons.close_fullscreen, title: "Customised Button", alignment: MainAxisAlignment.center, fontFamily: "Lumanosimo", fontSize: 20, onPressed: () {
                   print("Custom button is tapped");
-                })
+                }),
+                NetworkSpinningButton(title: "Network", height: 50, alignment: MainAxisAlignment.center,icon: Icons.access_alarm,onPressed: (changeState, state) {
+                  changeState(ButtonState.spinning);
+                  Future.delayed(const Duration(seconds: 10),() {
+                    changeState(ButtonState.idle);
+                  });
+                }),
               ],
             ),
           ],

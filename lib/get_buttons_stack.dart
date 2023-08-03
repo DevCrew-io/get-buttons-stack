@@ -44,4 +44,5 @@ export 'src/social/fb_sign_in_button.dart';
 export 'src/social/microsoft_sign_in_button.dart';
 export 'src/social/apple_sign_in_button.dart';
 export 'src/social/github_sign_in_button.dart';
+export 'src/network-spinning-button.dart';
 

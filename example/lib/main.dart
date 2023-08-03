@@ -102,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 const SizedBox(height: 10,),
                 GoogleSignInButton(isDark: true, onPressed: () {  },),
                 const SizedBox(height: 10,),
-                FacebookSignButton(onPressed: () {
+                FacebookSignButton(buttonColorTheme: ButtonColorTheme.whiteWithBlack, onPressed: () {
 
                 },),
                 const SizedBox(height: 10,),

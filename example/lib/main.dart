@@ -108,8 +108,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => const CustomButtonWithProperties()));
                 }, child: const Text("Custom button")),
                 const SizedBox(height: 20,),
-                NetworkSpinningButton(icon: Icons.login_outlined, width: 260, title: "Network Spinning",onPressed: (changeState, state) {
+                NetworkSpinningButton(icon: Icons.login_outlined, title: "Network Spinning",onPressed: (changeState, state) {
                   changeState(ButtonState.spinning);
+                  //await controller.callAnApi();
                   Future.delayed(const Duration(seconds: 8), () {
                     changeState(ButtonState.idle);
                   });

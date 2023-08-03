@@ -6,7 +6,7 @@ enum ButtonState { idle, spinning }
 // Custom widget for a network spinning button.
 class NetworkSpinningButton extends StatefulWidget {
   // Current state of the button, initialized to 'idle'.
-  ButtonState _state = ButtonState.idle;
+  ButtonState _state = ButtonState.idle; //pass it as argument
 
   // The title or label of the button.
   final String? title;

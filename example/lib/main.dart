@@ -1,3 +1,5 @@
+import 'package:example/custom_button_with_properties.dart';
+import 'package:example/social_media_login_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:get_buttons_stack/get_buttons_stack.dart';
 
@@ -98,34 +100,20 @@ class _MyHomePageState extends State<MyHomePage> {
             //Image.asset("assets/images/google_logo.png"),
             Column(
               children: [
-                GoogleSignInButton(onPressed: () {  },),
-                const SizedBox(height: 10,),
-                GoogleSignInButton(isDark: true, onPressed: () {  },),
-                const SizedBox(height: 10,),
-                FacebookSignButton(buttonColorTheme: ButtonColorTheme.whiteWithBlack, onPressed: () {
-
-                },),
-                const SizedBox(height: 10,),
-                MicrosoftSignInButton(isShortend: true, isBorderEnabled: true, onPressed: () {  },),
-                const SizedBox(height: 10,),
-                MicrosoftSignInButton(isDark: true, onPressed: () {  },),
-                const SizedBox(height: 10,),
-                AppleSignInButton(alignment: MainAxisAlignment.center, isContentWrapped: false, width: 300, isBorderedEnabled: true, onPressed: () {  },),
-                const SizedBox(height: 10,),
-                AppleSignInButton(isDark: true, isBorderedEnabled: true, onPressed: () {  },),
-                const SizedBox(height: 10,),
-                GithubSignInButton(fontColor: Colors.white, backgroundColor: Colors.black,fontSize: 18, isBorderEnabled: false, alignment: MainAxisAlignment.center, onPressed: () {
-                },),
-                const SizedBox(height: 10,),
-                CustomisedButton(icon: Icons.close_fullscreen, title: "Customised Button", alignment: MainAxisAlignment.center, fontFamily: "Lumanosimo", fontSize: 20, onPressed: () {
-                  print("Custom button is tapped");
-                }),
-                NetworkSpinningButton(title: "Network", height: 50, alignment: MainAxisAlignment.center,icon: Icons.access_alarm,onPressed: (changeState, state) {
+                ElevatedButton(onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const SocialMediaLoginButtons()));
+                }, child: Text("Social media buttons")),
+                SizedBox(height: 20,),
+                ElevatedButton(onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const CustomButtonWithProperties()));
+                }, child: const Text("Custom button")),
+                const SizedBox(height: 20,),
+                NetworkSpinningButton(icon: Icons.login_outlined, width: 260, title: "Network Spinning",onPressed: (changeState, state) {
                   changeState(ButtonState.spinning);
-                  Future.delayed(const Duration(seconds: 10),() {
+                  Future.delayed(const Duration(seconds: 8), () {
                     changeState(ButtonState.idle);
                   });
-                }),
+                })
               ],
             ),
           ],

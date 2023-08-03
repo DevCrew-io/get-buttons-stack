@@ -31,6 +31,8 @@ class CustomisedButton extends StatelessWidget {
   /// The alignment of the button's content.
   final MainAxisAlignment alignment;
 
+  final double? spacing;
+
   /// Flag to indicate if the button should have a border.
   final bool isBorderEnabled;
 
@@ -66,9 +68,10 @@ class CustomisedButton extends StatelessWidget {
     this.alignment = MainAxisAlignment.start,
     this.isBorderEnabled = false,
     this.fontWeight = FontWeight.w500,
-    this.iconSize,
+    this.iconSize = 20,
     this.isContentWrapped = false,
     this.icon,
+    this.spacing = 8,
     this.imagePath,
     required this.onPressed,
   }) : assert(icon == null || imagePath == null, "You cannot pass both arguments at once"), super(key: key);
@@ -122,8 +125,8 @@ class CustomisedButton extends StatelessWidget {
                   Row(
                     children: [
                       (icon == null && imagePath == null) ? Container() :
-                      const SizedBox(
-                        width: 12,
+                      SizedBox(
+                        width: spacing,
                       ),// Text label
                       Text(title ?? "",
                         style: TextStyle(fontSize: fontSize, fontWeight: fontWeight, fontFamily: fontFamily),

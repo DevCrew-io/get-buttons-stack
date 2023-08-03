@@ -38,10 +38,10 @@
 ///
 /// Note that each button widget accepts various properties to customize their appearance and behavior.
 library get_buttons_stack;
-
-export 'google_sign_in_button.dart';
-export 'fb_sign_in_button.dart';
-export 'microsoft_sign_in_button.dart';
-export 'apple_sign_in_button.dart';
-export 'github_sign_in_button.dart';
+export 'src/customised_button.dart';
+export 'src/social/google_sign_in_button.dart';
+export 'src/social/fb_sign_in_button.dart';
+export 'src/social/microsoft_sign_in_button.dart';
+export 'src/social/apple_sign_in_button.dart';
+export 'src/social/github_sign_in_button.dart';
 

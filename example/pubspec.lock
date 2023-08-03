@@ -62,6 +62,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_custom_buttons:
+    dependency: "direct dev"
+    description:
+      name: flutter_custom_buttons
+      sha256: "191c61df7c10810582588fc030f4335167f976fe2f41072f7dc02aea92009d65"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3"
   flutter_lints:
     dependency: "direct dev"
     description:

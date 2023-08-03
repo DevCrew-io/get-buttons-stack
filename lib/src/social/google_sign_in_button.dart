@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get_buttons_stack/src/utils/constants.dart';
 
-import 'constants.dart';
-
-/// A custom button widget that displays the Facebook logo and allows users to sign in with Facebook.
-class FacebookSignButton extends StatelessWidget {
+/// A custom button widget that displays the Google logo and allows users to sign in with Google.
+class GoogleSignInButton extends StatelessWidget {
   /// The title or label of the button.
   final String title;
 
   /// Flag to indicate if the title should be displayed in all uppercase letters.
-  final bool inCaps;
+  final bool isCaps;
 
   /// The corner radius of the button.
   final double radius;
@@ -16,30 +15,30 @@ class FacebookSignButton extends StatelessWidget {
   /// The optional width of the button.
   final double? width;
 
+  /// Flag to indicate if the button should have a dark theme.
+  final bool isDark;
+
   /// The height of the button.
   final double height;
 
   /// Flag to indicate if the content of the button should be wrapped.
   final bool isContentWrapped;
 
-  /// The alignment of the button's content.
-  final MainAxisAlignment alignment;
-
   /// Callback function to be executed when the button is pressed.
   ///
   /// The [onPressed] parameter must not be null.
-
   final VoidCallback onPressed;
 
-  const FacebookSignButton({
+
+  const GoogleSignInButton({
     Key? key,
-    this.title = "Continue with Facebook",
-    this.inCaps = false,
+    this.title = "Sign in with Google",
+    this.isCaps = false,
     this.radius = 0,
     this.width,
+    this.isDark = false,
     this.height = 40,
     this.isContentWrapped = true,
-    this.alignment = MainAxisAlignment.start,
     required this.onPressed,
   }) : super(key: key);
 
@@ -49,45 +48,47 @@ class FacebookSignButton extends StatelessWidget {
       width: width,
       height: height,
       child: ElevatedButton(
-        onPressed: () {
-          // This onPressed callback is currently empty.
-          // Replace it with the logic to handle Facebook sign-in.
-          onPressed();
-        },
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radius),
           ),
-          foregroundColor: Colors.white,
-          backgroundColor: const Color(0XFF2474f2),
+          foregroundColor: isDark
+              ? Colors.white
+              : const Color(0XFF000000).withOpacity(0.54),
+          backgroundColor: isDark
+              ? const Color(0XFF4285F4)
+              : const Color(0XFFFFFFFF),
           padding: const EdgeInsets.symmetric(horizontal: 0),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
+          padding: const EdgeInsets.only(left: 1.5, right: 8),
           child: Row(
             mainAxisSize:
             isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
-            mainAxisAlignment: alignment,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Facebook logo image
-              Image(
-                image: const AssetImage(
-                  ImagePath.fbLogo,
-                  package: 'get_buttons_stack',
+              // Google logo container
+              Container(
+                height: (height - 3),
+                width: (height - 3),
+                color: Colors.white.withOpacity(isDark ? 1.0 : 0.0),
+                child: const Image(
+                  image: AssetImage(
+                    ImagePath.googleLogo,
+                    package: 'get_buttons_stack',
+                  ),
                 ),
-                // to maintain size of icon of facebook with height of button's size i-e if height of button increases, icon will be set 60% of button's height
-                width: (60 / 100 * height).floorToDouble(),
-                height: (60 / 100 * height).floorToDouble(),
-                fit: BoxFit.fill,
               ),
               const SizedBox(width: 8,),
               // Text label
               Text(
-                inCaps ? title.toUpperCase() : title,
-                style: TextStyle(
-                  fontSize: (40 / 100 * height).floorToDouble(),
-                  fontWeight: FontWeight.w600,
+                isCaps ? title.toUpperCase() : title,
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ],

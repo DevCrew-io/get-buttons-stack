@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import 'package:get_buttons_stack/src/utils/constants.dart';
 
 /// A custom button widget that displays the GitHub logo and allows users to sign in with GitHub.
 class GithubSignInButton extends StatelessWidget {

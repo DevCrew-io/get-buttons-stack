@@ -115,7 +115,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 AppleSignInButton(isDark: true, isBorderedEnabled: true, onPressed: () {  },),
                 const SizedBox(height: 10,),
                 GithubSignInButton(fontColor: Colors.white, backgroundColor: Colors.black,fontSize: 18, isBorderEnabled: false, alignment: MainAxisAlignment.center, onPressed: () {
-                },)
+                },),
+                const SizedBox(height: 10,),
+                CustomisedButton(icon: Icons.close_fullscreen, title: "Customised Button", alignment: MainAxisAlignment.center, fontFamily: "Lumanosimo", fontSize: 20, onPressed: () {
+                  print("Custom button is tapped");
+                })
               ],
             ),
           ],

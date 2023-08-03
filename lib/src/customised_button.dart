@@ -32,8 +32,6 @@ class CustomisedButton extends StatelessWidget {
   /// The alignment of the button's content.
   final MainAxisAlignment alignment;
 
-  final double? spacing;
-
   /// Flag to indicate if the button should have a border.
   final bool isBorderEnabled;
 final Color? borderColor;
@@ -76,7 +74,6 @@ final double? borderWidth;
     this.iconSize = 20,
     this.isContentWrapped = false,
     this.icon,
-    this.spacing = 8,
     this.imagePath,
     required this.onPressed,
   }) : assert(icon == null || imagePath == null, "You cannot pass both arguments at once"), super(key: key);

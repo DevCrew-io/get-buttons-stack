@@ -151,7 +151,7 @@ class _NetworkSpinningButtonState extends State<NetworkSpinningButton> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Row(
-            // Aligning the content based on the 'contentWrapped' property.
+            // Aligning the content based on the 'isContentWrapped' property.
             mainAxisSize: widget.isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
             mainAxisAlignment: widget.alignment,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -168,7 +168,7 @@ class _NetworkSpinningButtonState extends State<NetworkSpinningButton> {
                     height: widget.iconSize,
                     child: CircularProgressIndicator(
                       // Optional parameters you can customize:
-                      value: null, // If you want to show progress, set a value between 0 and 1.
+                      value: null, // If you want to show progress, set a value between 0 and 1. Here null value is set as this behave like continuous animating progress
                       strokeWidth: widget.spinnerWidth,
                       backgroundColor: widget.spinnerBackgroundColor,
                       valueColor: AlwaysStoppedAnimation<Color>(widget.spinnerColor),

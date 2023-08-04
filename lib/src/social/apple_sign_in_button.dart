@@ -73,9 +73,9 @@ class AppleSignInButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           side: (isDark == true && isBorderedEnabled == true)
               ? const BorderSide(
-            width: 1.0,
-            color: Color(0XFF000000),
-          )
+                  width: 1.0,
+                  color: Color(0XFF000000),
+                )
               : null,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radius),
@@ -88,7 +88,7 @@ class AppleSignInButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Row(
             mainAxisSize:
-            isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
+                isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
             mainAxisAlignment: alignment,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -97,9 +97,7 @@ class AppleSignInButton extends StatelessWidget {
                 width: iconSize ?? (54 / 100 * height).floorToDouble(),
                 height: iconSize ?? (54 / 100 * height).floorToDouble(),
                 image: AssetImage(
-                  isDark
-                      ? ImagePath.appleLogoDark
-                      : ImagePath.appleLogoLight,
+                  isDark ? ImagePath.appleLogoDark : ImagePath.appleLogoLight,
                   package: 'get_buttons_stack',
                 ),
                 fit: BoxFit.fill,

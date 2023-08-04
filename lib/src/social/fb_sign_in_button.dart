@@ -66,7 +66,7 @@ class FacebookSignButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Row(
             mainAxisSize:
-            isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
+                isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
             mainAxisAlignment: alignment,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

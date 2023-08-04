@@ -1,87 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:get_buttons_stack/src/button.dart';
 import 'package:get_buttons_stack/src/utils/constants.dart';
 
-class CustomisedButton extends StatelessWidget {
-  /// The title or label of the button.
-  final String? title;
-
-  /// The corner radius of the button.
-  final double radius;
-
-  /// The optional width of the button.
-  final double? width;
-
-  /// The height of the button.
-  final double height;
-
-  /// The font size of the title text.
-  final double? fontSize;
-
-  /// The background color of the button.
-  final Color backgroundColor;
-
-  /// The font color of the title text.
-  final Color? fontColor;
-
-  final Color? imageColor;
-
-  final bool isElevated;
-  final double spacing;
-  final String? fontFamily;
-
-  /// The alignment of the button's content.
-  final MainAxisAlignment alignment;
-
-  /// Flag to indicate if the button should have a border.
-  final bool isBorderEnabled;
-final Color? borderColor;
-final double? borderWidth;
-  /// The font weight of the title text.
-  final FontWeight fontWeight;
-
-  /// The size of the GitHub logo icon.
-  final double? iconSize;
-
-  /// Flag to indicate if the content of the button should be wrapped.
-  final bool isContentWrapped;
-
-  final IconData? icon;
-  final String? imagePath;
-  /// Callback function to be executed when the button is pressed.
-  ///
-  /// The [onPressed] parameter must not be null.
-  ///
-  final VoidCallback onPressed;
-
+class CustomisedButton extends Button {
   const CustomisedButton({
     Key? key,
-    this.title,
-    this.radius = 0,
-    this.width,
-    this.height = 40,
-    this.fontSize = 15,
-    this.backgroundColor = Colors.white,
-    this.fontColor = Colors.black,
-    this.imageColor,
-    this.isElevated = true,
-    this.spacing = 12,
-    this.fontFamily,
-    this.alignment = MainAxisAlignment.start,
-    this.isBorderEnabled = false,
-    this.borderColor = Colors.transparent,
-    this.borderWidth,
-    this.fontWeight = FontWeight.w500,
-    this.iconSize = 20,
-    this.isContentWrapped = false,
-    this.icon,
-    this.imagePath,
-    required this.onPressed,
-  }) : assert(icon == null || imagePath == null, "You cannot pass both arguments at once"), super(key: key);
+    super.title,
+    super.radius = 0,
+    super.width,
+    super.height = 40,
+    super.fontSize = 15,
+    super.backgroundColor = Colors.white,
+    super.fontColor = Colors.black,
+    super.imageColor,
+    super.isElevated = true,
+    super.spacing = 12,
+    super.fontFamily,
+    super.alignment = MainAxisAlignment.start,
+    super.isBorderEnabled = false,
+    super.borderColor = Colors.transparent,
+    super.borderWidth,
+    super.fontWeight = FontWeight.w500,
+    super.iconSize = 20,
+    super.isContentWrapped = false,
+    super.iconData,
+    super.imagePath,
+    required super.onPressed,
+  })  : assert(iconData == null || imagePath == null,
+            "You cannot pass both arguments at once"),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      // Setting the width of the button based on the 'contentWrapped' property.
+      // Setting the width of the button based on the 'isContentWrapped' property.
       width: width,
       height: height,
       child: ElevatedButton(
@@ -95,7 +47,8 @@ final double? borderWidth;
           ),
           // Setting the button border if 'withBorder' is true.
           side: isBorderEnabled
-              ? BorderSide(width: borderWidth ?? 0, color: borderColor ?? Colors.black)
+              ? BorderSide(
+                  width: borderWidth ?? 0, color: borderColor ?? Colors.black)
               : null,
           foregroundColor: fontColor,
           backgroundColor: backgroundColor,
@@ -106,35 +59,46 @@ final double? borderWidth;
           child: Row(
             // Aligning the content based on the 'contentWrapped' property.
             mainAxisSize:
-            isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
+                isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
             mainAxisAlignment: alignment,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // GitHub logo icon
-              icon == null ? Container() : Icon(icon, size: iconSize, color: imageColor,),
-              imagePath == null ? Container() :
-              Image(
-                width: iconSize,
-                height: iconSize,
-                fit: BoxFit.fill,
-                image: AssetImage(
-                  imagePath ?? ""
-                ),
-                color: imageColor,
-              ),
+              iconData == null
+                  ? Container()
+                  : Icon(
+                      iconData,
+                      size: iconSize,
+                      color: imageColor,
+                    ),
+              imagePath == null
+                  ? Container()
+                  : Image(
+                      width: iconSize,
+                      height: iconSize,
+                      fit: BoxFit.fill,
+                      image: AssetImage(imagePath ?? ""),
+                      color: imageColor,
+                    ),
 
-              title == null ? Container() :
-                  Row(
-                    children: [
-                      (icon == null && imagePath == null) ? Container() :
-                      SizedBox(
-                        width: spacing,
-                      ),// Text label
-                      Text(title ?? "",
-                        style: TextStyle(fontSize: fontSize, fontWeight: fontWeight, fontFamily: fontFamily),
-                      ),
-                    ],
-                  ),
+              title == null
+                  ? Container()
+                  : Row(
+                      children: [
+                        (iconData == null && imagePath == null)
+                            ? Container()
+                            : SizedBox(
+                                width: spacing,
+                              ), // Text label
+                        Text(
+                          title ?? "",
+                          style: TextStyle(
+                              fontSize: fontSize,
+                              fontWeight: fontWeight,
+                              fontFamily: fontFamily),
+                        ),
+                      ],
+                    ),
             ],
           ),
         ),

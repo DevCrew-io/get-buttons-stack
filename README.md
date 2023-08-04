@@ -127,6 +127,8 @@ The `CustomisedButton` provides several properties to customize its appearance:
 - `fontFamily`: The custom font family for the button text.
 - `alignment`: The alignment of the button's content (default: `MainAxisAlignment.start`).
 - `isBorderEnabled`: Flag to indicate if the button should have a border (default: false).
+- `borderColor`: The color of the border.
+- `borderWidth`: The width of the border of button.
 - `fontWeight`: The font weight of the title text (default: `FontWeight.w500`).
 - `iconSize`: The size of the icon or image (default: null).
 - `isContentWrapped`: Flag to indicate if the content of the button should be wrapped (default: false).
@@ -400,17 +402,17 @@ The `GithubSignInButton` provides several properties to customize its appearance
 
 Feel free to modify these properties according to your app's design and requirements.
 
-### Network Spinning Button
+### Network Button
 
-The `NetworkSpinningButton` is a custom Flutter widget designed to create a button that can display either an icon or an image along with an optional text label. This button is particularly useful when you want to provide visual feedback to users while waiting for a network operation to complete, such as loading data or performing an authentication request.
+The `NetworkButton` is a custom Flutter widget designed to create a button that can display either an icon or an image along with an optional text label. This button is particularly useful when you want to provide visual feedback to users while waiting for a network operation to complete, such as loading data or performing an authentication request.
 
 #### Usage
 
-To use the `NetworkSpinningButton`, import the necessary packages and add the button to your UI:
+To use the `NetworkButton`, import the necessary packages and add the button to your UI:
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:get_buttons_stack/network_spinning_button.dart';
+import 'package:get_buttons_stack/network_button.dart';
 
 class MyButtonPage extends StatelessWidget {
   @override
@@ -420,7 +422,7 @@ class MyButtonPage extends StatelessWidget {
         title: Text('Button Page'),
       ),
       body: Center(
-        child: NetworkSpinningButton(
+        child: NetworkButton(
           onPressed: (changeState, state) {
             // Add your button's logic here
             // Call the `changeState` function to switch between 'idle' and 'spinning' states
@@ -435,9 +437,10 @@ class MyButtonPage extends StatelessWidget {
 
 ### Customization
 
-The `NetworkSpinningButton` provides several properties to customize its appearance and behavior:
+The `NetworkButton` provides several properties to customize its appearance and behavior:
 
 - `title`: The title or label of the button.
+- `buttonState` The state of button on which it's appearance will be changed i-e idle or spinning (default: ButtonState.idle)
 - `loadingText`: The text to display when the button is in the `spinning` state (default: "Loading...").
 - `radius`: The corner radius of the button (default: 0).
 - `width`: The optional width of the button.
@@ -465,12 +468,10 @@ Feel free to modify these properties according to your app's design and requirem
 
 #### Button States
 
-The `NetworkSpinningButton` supports two states:
+The `NetworkButton` supports two states:
 
 1. `idle`: The default state of the button, where the icon, image, and text label are visible.
 2. `spinning`: This state is triggered when the button is pressed, indicating that the network operation is in progress. The icon or image is replaced with a spinning progress indicator, and the text label is replaced with the `loadingText`.
-
-To switch between these states, you can use the `changeState` function provided in
 
 ## Contributing
 

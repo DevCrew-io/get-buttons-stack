@@ -25,14 +25,19 @@ class AppleSignInButton extends StatelessWidget {
   /// Flag to indicate if the content of the button should be wrapped.
   final bool isContentWrapped;
 
+  final String? fontFamily;
+
+
+  /// The font weight of the title text.
+  final FontWeight fontWeight;
+
+
   /// The font size of the title text.
-  final double? fontSize;
 
   /// Flag to indicate if the title should be displayed in all uppercase letters.
   final bool isCaps;
 
   /// The size of the Apple logo icon.
-  final double? iconSize;
 
   /// The height of the button.
   final double height;
@@ -52,9 +57,9 @@ class AppleSignInButton extends StatelessWidget {
     this.isBorderedEnabled = false,
     this.alignment = MainAxisAlignment.start,
     this.isContentWrapped = true,
-    this.fontSize,
+    this.fontFamily,
+    this.fontWeight = FontWeight.w600,
     this.isCaps = false,
-    this.iconSize,
     this.height = 44,
     required this.onPressed,
   }) : super(key: key);
@@ -94,8 +99,8 @@ class AppleSignInButton extends StatelessWidget {
             children: [
               // Apple logo icon
               Image(
-                width: iconSize ?? (54 / 100 * height).floorToDouble(),
-                height: iconSize ?? (54 / 100 * height).floorToDouble(),
+                width: (54 / 100 * height).floorToDouble(),
+                height: (54 / 100 * height).floorToDouble(),
                 image: AssetImage(
                   isDark ? ImagePath.appleLogoDark : ImagePath.appleLogoLight,
                   package: 'get_buttons_stack',
@@ -108,7 +113,9 @@ class AppleSignInButton extends StatelessWidget {
                 isCaps ? title.toUpperCase() : title,
                 style: TextStyle(
                   fontSize: (43 / 100 * height).floorToDouble(),
-                  fontWeight: FontWeight.w600,
+                  fontWeight: fontWeight,
+                  fontFamily: fontFamily
+
                 ),
               ),
             ],

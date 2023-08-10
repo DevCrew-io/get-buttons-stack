@@ -92,7 +92,7 @@ class GithubSignInButton extends StatelessWidget {
           child: Row(
             // Aligning the content based on the 'contentWrapped' property.
             mainAxisSize:
-            isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
+                isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
             mainAxisAlignment: alignment,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -107,9 +107,7 @@ class GithubSignInButton extends StatelessWidget {
                 ),
                 color: fontColor,
               ),
-              const SizedBox(
-                width: 12,
-              ),
+              const SizedBox(width: 12,),
               // Text label
               Text(
                 title,

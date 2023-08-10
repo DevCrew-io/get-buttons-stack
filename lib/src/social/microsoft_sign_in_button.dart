@@ -64,35 +64,40 @@ class MicrosoftSignInButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           side: isBorderEnabled
               ? const BorderSide(
-            width: 1.5,
-            color: Color(0XFF8C8C8C),
-          )
+                  width: 1.5,
+                  color: Color(0XFF8C8C8C),
+                )
               : null,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radius),
           ),
           foregroundColor: isDark ? Colors.white : const Color(0XFF5E5E5E),
           backgroundColor:
-          isDark ? const Color(0XFF2F2F2F) : const Color(0XFFFFFFFF),
+              isDark ? const Color(0XFF2F2F2F) : const Color(0XFFFFFFFF),
           padding: const EdgeInsets.symmetric(horizontal: 0),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Row(
             mainAxisSize:
-            isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
+                isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
             mainAxisAlignment: alignment,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Microsoft logo image
               const Image(
-                image: AssetImage(ImagePath.msLogo, package: 'get_buttons_stack'),
+                image:
+                    AssetImage(ImagePath.msLogo, package: 'get_buttons_stack'),
               ),
               const SizedBox(width: 12,),
               // Text label
               Text(
                 // ignore: unrelated_type_equality_checks
-                isShortend ? (isCaps == true ? "Sign in".toUpperCase() : "Sign in") : (isCaps == true ? "Sign in with Microsoft".toUpperCase() : "Sign in with Microsoft"),
+                isShortend
+                    ? (isCaps == true ? "Sign in".toUpperCase() : "Sign in")
+                    : (isCaps == true
+                        ? "Sign in with Microsoft".toUpperCase()
+                        : "Sign in with Microsoft"),
                 style: const TextStyle(
                   fontFamily: "Segoe UI",
                   fontSize: 15,

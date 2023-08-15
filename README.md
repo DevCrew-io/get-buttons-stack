@@ -296,8 +296,8 @@ The `MicrosoftSignInButton` provides several properties to customize its appeara
 Feel free to modify these properties according to your app's design and requirements.
 
 #### Demo
-![Alt text](https://github.com/DevCrew-io/get-buttons-stack/blob/readme/screenshots/microsoft_buttons.png)
-![Alt text](https://github.com/DevCrew-io/get-buttons-stack/blob/readme/screenshots/microsoft_buttons2.png)
+![Alt text](https://github.com/DevCrew-io/get-buttons-stack/blob/add-readme-screenshot/screenshots/microsoft_buttons.png)
+![Alt text](https://github.com/DevCrew-io/get-buttons-stack/blob/add-readme-screenshot/screenshots/microsoft_buttons2.png)
 
 ### Apple Sign-In Button
 

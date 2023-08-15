@@ -426,6 +426,11 @@ The `GithubSignInButton` provides several properties to customize its appearance
 
 Feel free to modify these properties according to your app's design and requirements.
 
+#### Demo
+
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/add-readme-screenshot/screenshots/github_buttons.png" alt="Alt Text" width="300">
+
+
 ### Network Button
 
 The `NetworkButton` is a custom Flutter widget designed to create a button that can display either an icon or an image along with an optional text label. This button is particularly useful when you want to provide visual feedback to users while waiting for a network operation to complete, such as loading data or performing an authentication request.

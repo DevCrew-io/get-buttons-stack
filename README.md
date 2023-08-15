@@ -254,6 +254,11 @@ The `buttonColorTheme` property allows you to choose from four different color t
 
 Feel free to modify these properties according to your app's design and requirements.
 
+#### Demo
+
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/add-readme-screenshot/screenshots/facebook_button.png" alt="Alt Text" width="300">
+
+
 ### Microsoft Sign-In Button
 
 The `MicrosoftSignInButton` is a custom Flutter widget designed to display a Microsoft sign-in button in your application. This button allows users to sign in using their Microsoft account. It is highly customizable, allowing you to adjust various properties such as button appearance, theme, font size, and more.

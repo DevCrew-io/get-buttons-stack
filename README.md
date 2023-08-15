@@ -140,7 +140,7 @@ Feel free to modify these properties according to your app's design and requirem
 
 #### Demo
 
-<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/add-readme-screenshot/screenshots/customised_buttons.png" alt="Alt Text" width="300">
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/main/screenshots/customised_buttons.png" alt="Alt Text" width="300">
 
 ### Google Sign-In Button
 
@@ -193,7 +193,7 @@ Feel free to modify these properties according to your app's design and requirem
 
 #### Demo
 
-<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/add-readme-screenshot/screenshots/google_buttons.png" alt="Alt Text" width="300">
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/main/screenshots/google_buttons.png" alt="Alt Text" width="300">
 
 ### Facebook Sign-In Button
 
@@ -256,7 +256,7 @@ Feel free to modify these properties according to your app's design and requirem
 
 #### Demo
 
-<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/add-readme-screenshot/screenshots/facebook_button.png" alt="Alt Text" width="300">
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/main/screenshots/facebook_button.png" alt="Alt Text" width="300">
 
 
 ### Microsoft Sign-In Button
@@ -311,8 +311,8 @@ Feel free to modify these properties according to your app's design and requirem
 
 #### Demo
 
-<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/add-readme-screenshot/screenshots/microsoft_buttons.png" alt="Alt Text" width="300">
-<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/add-readme-screenshot/screenshots/microsoft_buttons2.png" alt="Alt Text" width="300">
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/main/screenshots/microsoft_buttons.png" alt="Alt Text" width="300">
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/main/screenshots/microsoft_buttons2.png" alt="Alt Text" width="300">
 
 ### Apple Sign-In Button
 
@@ -368,7 +368,7 @@ Feel free to modify these properties according to your app's design and requirem
 
 #### Demo
 
-<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/add-readme-screenshot/screenshots/apple_buttons.png" alt="Alt Text" width="300">
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/main/screenshots/apple_buttons.png" alt="Alt Text" width="300">
 
 
 ### GitHub Sign-In Button
@@ -428,7 +428,7 @@ Feel free to modify these properties according to your app's design and requirem
 
 #### Demo
 
-<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/add-readme-screenshot/screenshots/github_buttons.png" alt="Alt Text" width="300">
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/main/screenshots/github_buttons.png" alt="Alt Text" width="300">
 
 
 ### Network Button

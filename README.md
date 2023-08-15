@@ -366,6 +366,11 @@ The `AppleSignInButton` provides several properties to customize its appearance 
 
 Feel free to modify these properties according to your app's design and requirements.
 
+#### Demo
+
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/add-readme-screenshot/screenshots/apple_buttons.png" alt="Alt Text" width="300">
+
+
 ### GitHub Sign-In Button
 
 

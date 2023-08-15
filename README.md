@@ -140,7 +140,7 @@ Feel free to modify these properties according to your app's design and requirem
 
 #### Demo
 
-<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/add-readme-screenshot/screenshots/google_buttons.png" alt="Alt Text" width="300">
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/add-readme-screenshot/screenshots/customised_buttons.png" alt="Alt Text" width="300">
 
 ### Google Sign-In Button
 

@@ -138,6 +138,10 @@ The `CustomisedButton` provides several properties to customize its appearance:
 
 Feel free to modify these properties according to your app's design and requirements.
 
+#### Demo
+
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/main/screenshots/customised_buttons.png" alt="Alt Text" width="300">
+
 ### Google Sign-In Button
 
 The `GoogleSignInButton` is a custom Flutter widget designed to display a Google sign-in button in your application. This button allows users to sign in with their Google account. It is highly customizable, allowing you to adjust various properties such as title, button appearance, font size, and more.
@@ -185,6 +189,11 @@ The `GoogleSignInButton` provides several properties to customize its appearance
 - `onPressed`: Callback function to be executed when the button is pressed (required).
 
 Feel free to modify these properties according to your app's design and requirements.
+
+
+#### Demo
+
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/main/screenshots/google_buttons.png" alt="Alt Text" width="300">
 
 ### Facebook Sign-In Button
 
@@ -245,6 +254,11 @@ The `buttonColorTheme` property allows you to choose from four different color t
 
 Feel free to modify these properties according to your app's design and requirements.
 
+#### Demo
+
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/main/screenshots/facebook_button.png" alt="Alt Text" width="300">
+
+
 ### Microsoft Sign-In Button
 
 The `MicrosoftSignInButton` is a custom Flutter widget designed to display a Microsoft sign-in button in your application. This button allows users to sign in using their Microsoft account. It is highly customizable, allowing you to adjust various properties such as button appearance, theme, font size, and more.
@@ -294,6 +308,11 @@ The `MicrosoftSignInButton` provides several properties to customize its appeara
 - `onPressed`: Callback function to be executed when the button is pressed (required).
 
 Feel free to modify these properties according to your app's design and requirements.
+
+#### Demo
+
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/main/screenshots/microsoft_buttons.png" alt="Alt Text" width="300">
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/main/screenshots/microsoft_buttons2.png" alt="Alt Text" width="300">
 
 ### Apple Sign-In Button
 
@@ -346,6 +365,11 @@ The `AppleSignInButton` provides several properties to customize its appearance 
 - `onPressed`: Callback function to be executed when the button is pressed (required).
 
 Feel free to modify these properties according to your app's design and requirements.
+
+#### Demo
+
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/main/screenshots/apple_buttons.png" alt="Alt Text" width="300">
+
 
 ### GitHub Sign-In Button
 
@@ -401,6 +425,11 @@ The `GithubSignInButton` provides several properties to customize its appearance
 - `onPressed`: Callback function to be executed when the button is pressed (required).
 
 Feel free to modify these properties according to your app's design and requirements.
+
+#### Demo
+
+<img src="https://github.com/DevCrew-io/get-buttons-stack/blob/main/screenshots/github_buttons.png" alt="Alt Text" width="300">
+
 
 ### Network Button
 

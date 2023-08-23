@@ -55,12 +55,7 @@ class NetworkButton extends Button {
       width: width,
       height: height,
       child: ElevatedButton(
-        onPressed: () {
-          // Check if the button is in 'idle' state before triggering onPressed callback.
-          if (buttonState == ButtonState.idle) {
-            onPressed();
-          }
-        },
+        onPressed: onPressed,
         style: ButtonStyle(
           // Setting overlay color to transparent if the button is in 'spinning' state to avoid visual artifacts.
           overlayColor: buttonState == ButtonState.idle
@@ -142,7 +137,7 @@ class NetworkButton extends Button {
                           children: [
                             // If there's an icon or image, add spacing before the text label.
                             (iconData == null && imagePath == null)
-                                ? Container()
+                                ? Container(width: buttonState == ButtonState.spinning ? (spacing ?? 8) : null)
                                 : SizedBox(width: spacing),
                             // Text label
                             Text(

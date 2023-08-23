@@ -1,104 +1,110 @@
 import 'package:flutter/material.dart';
 import 'package:get_buttons_stack/src/button.dart';
-import 'package:get_buttons_stack/src/utils/constants.dart';
 
 class CustomisedButton extends Button {
   const CustomisedButton({
     Key? key,
-    super.title,
-    super.radius = 0,
-    super.width,
-    super.height = 40,
-    super.fontSize = 15,
-    super.backgroundColor = Colors.white,
-    super.fontColor = Colors.black,
-    super.imageColor,
-    super.isElevated = true,
-    super.spacing = 12,
-    super.fontFamily,
-    super.alignment = MainAxisAlignment.start,
-    super.isBorderEnabled = false,
-    super.borderColor = Colors.transparent,
-    super.borderWidth,
-    super.fontWeight = FontWeight.w500,
-    super.iconSize = 20,
-    super.isContentWrapped = false,
-    super.iconData,
-    super.imagePath,
-    required super.onPressed,
+    String? title,
+    double radius = 0,
+    double? width,
+    double height = 40,
+    double fontSize = 15,
+    Color backgroundColor = Colors.white,
+    Color fontColor = Colors.black,
+    Color? imageColor,
+    bool isElevated = true,
+    double spacing = 12,
+    String? fontFamily,
+    MainAxisAlignment alignment = MainAxisAlignment.start,
+    bool isBorderEnabled = false,
+    Color? borderColor = Colors.transparent,
+    double? borderWidth,
+    FontWeight fontWeight = FontWeight.w500,
+    double iconSize = 20,
+    bool isContentWrapped = false,
+    IconData? iconData,
+    String? imagePath,
+    double horizontalPadding = 12,
+    required VoidCallback onPressed,
   })  : assert(iconData == null || imagePath == null,
-            "You cannot pass both arguments at once"),
-        super(key: key);
+  "You cannot pass both arguments at once"),
+        super(
+        key: key,
+        title: title,
+        radius: radius,
+        width: width,
+        height: height,
+        fontSize: fontSize,
+        backgroundColor: backgroundColor,
+        fontColor: fontColor,
+        imageColor: imageColor,
+        isElevated: isElevated,
+        spacing: spacing,
+        fontFamily: fontFamily,
+        alignment: alignment,
+        isBorderEnabled: isBorderEnabled,
+        borderColor: borderColor,
+        borderWidth: borderWidth,
+        fontWeight: fontWeight,
+        iconSize: iconSize,
+        isContentWrapped: isContentWrapped,
+        iconData: iconData,
+        imagePath: imagePath,
+        horizontalPadding: horizontalPadding,
+        onPressed: onPressed,
+      );
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      // Setting the width of the button based on the 'isContentWrapped' property.
       width: width,
       height: height,
       child: ElevatedButton(
-        onPressed: () {
-          onPressed();
-        },
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           elevation: isElevated ? null : 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radius),
+            side: isBorderEnabled
+                ? BorderSide(
+                width: borderWidth ?? 0, color: borderColor ?? Colors.black)
+                : BorderSide.none,
           ),
-          // Setting the button border if 'withBorder' is true.
-          side: isBorderEnabled
-              ? BorderSide(
-                  width: borderWidth ?? 0, color: borderColor ?? Colors.black)
-              : null,
           foregroundColor: fontColor,
           backgroundColor: backgroundColor,
           padding: const EdgeInsets.symmetric(horizontal: 0),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding ?? 0),
           child: Row(
-            // Aligning the content based on the 'contentWrapped' property.
-            mainAxisSize:
-                isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
+            mainAxisSize: isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
             mainAxisAlignment: alignment,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // GitHub logo icon
-              iconData == null
-                  ? Container()
-                  : Icon(
-                      iconData,
-                      size: iconSize,
-                      color: imageColor,
-                    ),
-              imagePath == null
-                  ? Container()
-                  : Image(
-                      width: iconSize,
-                      height: iconSize,
-                      fit: BoxFit.fill,
-                      image: AssetImage(imagePath ?? ""),
-                      color: imageColor,
-                    ),
-
-              title == null
-                  ? Container()
-                  : Row(
-                      children: [
-                        (iconData == null && imagePath == null)
-                            ? Container()
-                            : SizedBox(
-                                width: spacing,
-                              ), // Text label
-                        Text(
-                          title ?? "",
-                          style: TextStyle(
-                              fontSize: fontSize,
-                              fontWeight: fontWeight,
-                              fontFamily: fontFamily),
-                        ),
-                      ],
-                    ),
+              if (iconData != null)
+                Icon(
+                  iconData,
+                  size: iconSize,
+                  color: imageColor,
+                ),
+              if (imagePath != null)
+                Image(
+                  width: iconSize,
+                  height: iconSize,
+                  fit: BoxFit.fill,
+                  image: AssetImage(imagePath!),
+                  color: imageColor,
+                ),
+              if (title != null && (iconData != null || imagePath != null))
+                SizedBox(width: spacing),
+              Text(
+                title ?? "",
+                style: TextStyle(
+                  fontSize: fontSize,
+                  fontWeight: fontWeight,
+                  fontFamily: fontFamily,
+                ),
+              ),
             ],
           ),
         ),

@@ -89,6 +89,8 @@ class NetworkButton extends Button {
       ),
     );
 
+    final double space = isSpinning ? (spacing ?? 8) : (((imagePath != null || iconData != null) && title != null) ? spacing : 0);
+
     return SizedBox(
       width: width,
       height: height,
@@ -126,7 +128,7 @@ class NetworkButton extends Button {
                 children: [
                   isSpinning ? spinner : Container(),
                   iconOrImage,
-                  SizedBox(width: spacing),
+                  SizedBox(width: space),
                   textWidget,
                 ],
               ),

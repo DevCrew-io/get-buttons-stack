@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../utils/constants.dart';
+import '../utils/constants.dart'; // Importing constants from another file.
 
+// Enumeration for different color themes of the button.
 enum ButtonColorTheme {
   blueWithWhite,
   whiteWithBlue,
@@ -8,17 +9,19 @@ enum ButtonColorTheme {
   whiteWithBlack,
 }
 
+/// A custom button widget that displays the Facebook logo and allows users to sign in with Facebook.
 class FacebookSignButton extends StatelessWidget {
-  final String title;
-  final bool inCaps;
-  final double radius;
-  final double? width;
-  final double height;
-  final bool isContentWrapped;
-  final bool isTextOnly;
-  final MainAxisAlignment alignment;
-  final ButtonColorTheme buttonColorTheme;
-  final VoidCallback onPressed;
+  // Properties to customize the button appearance and behavior.
+  final String title; // The title or label of the button.
+  final bool inCaps; // Flag to indicate if the title should be displayed in all uppercase letters.
+  final double radius; // The corner radius of the button.
+  final double? width; // The optional width of the button.
+  final double height; // The height of the button.
+  final bool isContentWrapped; // Flag to indicate if the content of the button should be wrapped.
+  final bool isTextOnly; // Flag to indicate if the button should display only text.
+  final MainAxisAlignment alignment; // The alignment of the button's content.
+  final ButtonColorTheme buttonColorTheme; // The color theme of the button.
+  final VoidCallback onPressed; // Callback function to be executed when the button is pressed.
 
   const FacebookSignButton({
     Key? key,
@@ -36,6 +39,7 @@ class FacebookSignButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Determine the background and foreground colors based on the selected color theme.
     final (backgroundColor, foregroundColor) = _setColorTheme();
 
     return SizedBox(
@@ -47,7 +51,8 @@ class FacebookSignButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radius),
           ),
-          side: (buttonColorTheme == ButtonColorTheme.whiteWithBlack || buttonColorTheme == ButtonColorTheme.whiteWithBlue) ? BorderSide(color: foregroundColor, width: 1.0): null,
+          // Apply side border if the color theme is white with black or white with blue.
+          side: (buttonColorTheme == ButtonColorTheme.whiteWithBlack || buttonColorTheme == ButtonColorTheme.whiteWithBlue) ? BorderSide(color: foregroundColor, width: 1.0) : null,
           foregroundColor: foregroundColor,
           backgroundColor: backgroundColor,
           padding: const EdgeInsets.symmetric(horizontal: 0),
@@ -59,6 +64,7 @@ class FacebookSignButton extends StatelessWidget {
             mainAxisAlignment: alignment,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              // Display Facebook logo image if not text-only button.
               if (!isTextOnly)
                 Image(
                   image: const AssetImage(
@@ -71,6 +77,7 @@ class FacebookSignButton extends StatelessWidget {
                   fit: BoxFit.fill,
                 ),
               SizedBox(width: isTextOnly ? 0 : 8),
+              // Display text label.
               Text(
                 inCaps ? title.toUpperCase() : title,
                 style: TextStyle(
@@ -85,6 +92,7 @@ class FacebookSignButton extends StatelessWidget {
     );
   }
 
+  // Set background and foreground colors based on the color theme.
   (Color, Color) _setColorTheme() {
     switch(buttonColorTheme) {
       case ButtonColorTheme.blueWithWhite:

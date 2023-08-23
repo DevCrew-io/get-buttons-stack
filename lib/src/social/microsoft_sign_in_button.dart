@@ -13,7 +13,7 @@ class MicrosoftSignInButton extends StatelessWidget {
   /// Flag to indicate if the button should have a dark theme.
   final bool isDark;
 
-  /// Flag to indicate if the button should be shortened.
+  /// Flag to indicate if the button should be short form.
   final bool isShortForm;
 
   /// The alignment of the button's content.

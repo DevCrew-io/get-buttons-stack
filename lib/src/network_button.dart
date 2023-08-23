@@ -20,11 +20,6 @@ class NetworkButton extends Button {
 
   const NetworkButton({
     super.key,
-    this.loadingText = "Loading...",
-    required this.buttonState,
-    this.spinnerColor = Colors.black,
-    this.spinnerWidth = 3.0,
-    this.spinnerBackgroundColor,
     super.title,
     super.radius = 0,
     super.width,
@@ -46,6 +41,11 @@ class NetworkButton extends Button {
     super.borderWidth,
     super.imagePath,
     required super.onPressed,
+    this.loadingText = "Loading...",
+    this.spinnerColor = Colors.black,
+    this.spinnerWidth = 3.0,
+    this.spinnerBackgroundColor,
+    required this.buttonState,
   });
 
   @override

@@ -55,6 +55,7 @@ abstract class Button extends StatelessWidget {
 
   ///The iconData to show icon in button
   final String? imagePath;
+  final double? horizontalPadding;
 
   /// Callback function to be executed when the button is pressed.
   ///
@@ -75,6 +76,7 @@ abstract class Button extends StatelessWidget {
     this.iconSize,
     this.iconData,
     this.imagePath,
+    this.horizontalPadding,
     required this.height,
     required this.backgroundColor,
     required this.alignment,

@@ -40,6 +40,7 @@ class NetworkButton extends Button {
     super.borderColor = Colors.transparent,
     super.borderWidth,
     super.imagePath,
+    super.horizontalPadding = 12,
     required super.onPressed,
     this.loadingText = "Loading...",
     this.spinnerColor = Colors.black,
@@ -85,7 +86,7 @@ class NetworkButton extends Button {
               EdgeInsets.symmetric(horizontal: 0)),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding ?? 0),
           child: Row(
             // Aligning the content based on the 'isContentWrapped' property.
             mainAxisSize:

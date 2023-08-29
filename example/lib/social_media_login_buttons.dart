@@ -103,7 +103,7 @@ class SocialMediaLoginButtons extends StatelessWidget {
                 MicrosoftSignInButton(
                   isContentWrapped: true,
                   isBorderEnabled: true,
-                  isShortend: true,
+                  isShortForm: true,
                   onPressed: () {
                     // Callback when the button is pressed.
                   },
@@ -115,7 +115,7 @@ class SocialMediaLoginButtons extends StatelessWidget {
                 MicrosoftSignInButton(
                   isContentWrapped: true,
                   isDark: true,
-                  isShortend: true,
+                  isShortForm: true,
                   onPressed: () {
                     // Callback when the button is pressed.
                   },
@@ -152,7 +152,7 @@ class SocialMediaLoginButtons extends StatelessWidget {
                   isContentWrapped: true,
                   isCaps: true,
                   isDark: true,
-                  isShortend: true,
+                  isShortForm: true,
                   onPressed: () {
                     // Callback when the button is pressed.
                   },

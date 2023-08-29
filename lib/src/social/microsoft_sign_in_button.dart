@@ -13,8 +13,8 @@ class MicrosoftSignInButton extends StatelessWidget {
   /// Flag to indicate if the button should have a dark theme.
   final bool isDark;
 
-  /// Flag to indicate if the button should be shortened.
-  final bool isShortend;
+  /// Flag to indicate if the button should be short form.
+  final bool isShortForm;
 
   /// The alignment of the button's content.
   final MainAxisAlignment alignment;
@@ -43,7 +43,7 @@ class MicrosoftSignInButton extends StatelessWidget {
     this.radius = 0,
     this.width,
     this.isDark = false,
-    this.isShortend = false,
+    this.isShortForm = false,
     this.alignment = MainAxisAlignment.center,
     this.isContentWrapped = true,
     this.isBorderEnabled = false,
@@ -93,7 +93,7 @@ class MicrosoftSignInButton extends StatelessWidget {
               // Text label
               Text(
                 // ignore: unrelated_type_equality_checks
-                isShortend
+                isShortForm
                     ? (isCaps == true ? "Sign in".toUpperCase() : "Sign in")
                     : (isCaps == true
                         ? "Sign in with Microsoft".toUpperCase()

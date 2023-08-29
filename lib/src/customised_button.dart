@@ -33,6 +33,11 @@ class CustomisedButton extends Button {
 
   @override
   Widget build(BuildContext context) {
+
+    Widget spacer = (title != null && (iconData != null || imagePath != null)) ? SizedBox(width: spacing) : Container();
+    Widget icon = (iconData != null) ? Icon(iconData, size: iconSize, color: imageColor,) : Container();
+    Widget image = (imagePath != null) ? Image(width: iconSize, height: iconSize, fit: BoxFit.fill, image: AssetImage(imagePath!),
+        color: imageColor,) : Container();
     return SizedBox(
       width: width,
       height: height,
@@ -58,22 +63,9 @@ class CustomisedButton extends Button {
             mainAxisAlignment: alignment,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              if (iconData != null)
-                Icon(
-                  iconData,
-                  size: iconSize,
-                  color: imageColor,
-                ),
-              if (imagePath != null)
-                Image(
-                  width: iconSize,
-                  height: iconSize,
-                  fit: BoxFit.fill,
-                  image: AssetImage(imagePath!),
-                  color: imageColor,
-                ),
-              if (title != null && (iconData != null || imagePath != null))
-                SizedBox(width: spacing),
+              icon,
+              image,
+              spacer,
               Text(
                 title ?? "",
                 style: TextStyle(

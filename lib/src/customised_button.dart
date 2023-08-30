@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get_buttons_stack/src/button.dart';
-import 'package:get_buttons_stack/src/utils/constants.dart';
 
 class CustomisedButton extends Button {
   const CustomisedButton({

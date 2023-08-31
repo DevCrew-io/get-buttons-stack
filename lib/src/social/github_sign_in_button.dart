@@ -105,11 +105,16 @@ class GithubSignInButton extends StatelessWidget {
                 ),
                 color: fontColor,
               ),
-              const SizedBox(width: 12,),
+              const SizedBox(
+                width: 12,
+              ),
               // Text label
               Text(
                 title,
-                style: TextStyle(fontSize: fontSize, fontWeight: fontWeight, fontFamily: fontFamily),
+                style: TextStyle(
+                    fontSize: fontSize,
+                    fontWeight: fontWeight,
+                    fontFamily: fontFamily),
               ),
             ],
           ),

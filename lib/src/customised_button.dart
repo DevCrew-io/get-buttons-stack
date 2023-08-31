@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get_buttons_stack/src/button.dart';
-import 'package:get_buttons_stack/src/utils/constants.dart';
 
 class CustomisedButton extends Button {
   const CustomisedButton({
@@ -33,11 +32,25 @@ class CustomisedButton extends Button {
 
   @override
   Widget build(BuildContext context) {
-
-    Widget spacer = (title != null && (iconData != null || imagePath != null)) ? SizedBox(width: spacing) : Container();
-    Widget icon = (iconData != null) ? Icon(iconData, size: iconSize, color: imageColor,) : Container();
-    Widget image = (imagePath != null) ? Image(width: iconSize, height: iconSize, fit: BoxFit.fill, image: AssetImage(imagePath!),
-        color: imageColor,) : Container();
+    Widget spacer = (title != null && (iconData != null || imagePath != null))
+        ? SizedBox(width: spacing)
+        : Container();
+    Widget icon = (iconData != null)
+        ? Icon(
+            iconData,
+            size: iconSize,
+            color: imageColor,
+          )
+        : Container();
+    Widget image = (imagePath != null)
+        ? Image(
+            width: iconSize,
+            height: iconSize,
+            fit: BoxFit.fill,
+            image: AssetImage(imagePath!),
+            color: imageColor,
+          )
+        : Container();
     return SizedBox(
       width: width,
       height: height,
@@ -49,7 +62,7 @@ class CustomisedButton extends Button {
             borderRadius: BorderRadius.circular(radius),
             side: isBorderEnabled
                 ? BorderSide(
-                width: borderWidth ?? 0, color: borderColor ?? Colors.black)
+                    width: borderWidth ?? 0, color: borderColor ?? Colors.black)
                 : BorderSide.none,
           ),
           foregroundColor: fontColor,
@@ -59,7 +72,8 @@ class CustomisedButton extends Button {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: horizontalPadding ?? 0),
           child: Row(
-            mainAxisSize: isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
+            mainAxisSize:
+                isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
             mainAxisAlignment: alignment,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

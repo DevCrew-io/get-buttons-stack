@@ -1,4 +1,3 @@
-
 // Importing required packages and libraries from Flutter.
 import 'package:flutter/material.dart';
 import 'package:get_buttons_stack/get_buttons_stack.dart';
@@ -15,7 +14,8 @@ class CustomButtonWithProperties extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Custom Button with Properties'), // Title displayed in the app bar.
+        title: const Text(
+            'Custom Button with Properties'), // Title displayed in the app bar.
       ),
       body: Center(
         child: Padding(
@@ -161,9 +161,13 @@ class CustomButtonWithProperties extends StatelessWidget {
                   alignment: MainAxisAlignment.center,
                   onPressed: () {},
                 ),
-                const SizedBox(height: 8,),
+                const SizedBox(
+                  height: 8,
+                ),
                 const Text("Icon and text spacing"),
-                const SizedBox(height: 8,),
+                const SizedBox(
+                  height: 8,
+                ),
                 // Creating a button with spacing between icon and text.
                 CustomisedButton(
                   radius: 20,
@@ -179,9 +183,13 @@ class CustomButtonWithProperties extends StatelessWidget {
                   alignment: MainAxisAlignment.center,
                   onPressed: () {},
                 ),
-                const SizedBox(height: 8,),
+                const SizedBox(
+                  height: 8,
+                ),
                 const Text("With icon only"),
-                const SizedBox(height: 8,),
+                const SizedBox(
+                  height: 8,
+                ),
                 // Creating a button with only an icon and specific icon size.
                 CustomisedButton(
                   radius: 20,
@@ -201,4 +209,3 @@ class CustomButtonWithProperties extends StatelessWidget {
     );
   }
 }
-

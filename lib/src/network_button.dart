@@ -68,16 +68,16 @@ class NetworkButton extends Button {
     final Widget iconOrImage = isSpinning
         ? Container()
         : (iconData != null
-        ? Icon(iconData!, size: iconSize, color: imageColor)
-        : (imagePath != null
-        ? Image(
-      width: iconSize,
-      height: iconSize,
-      fit: BoxFit.fill,
-      image: AssetImage(imagePath!),
-      color: imageColor,
-    )
-        : Container()));
+            ? Icon(iconData!, size: iconSize, color: imageColor)
+            : (imagePath != null
+                ? Image(
+                    width: iconSize,
+                    height: iconSize,
+                    fit: BoxFit.fill,
+                    image: AssetImage(imagePath!),
+                    color: imageColor,
+                  )
+                : Container()));
 
     // Text widget
     final Widget textWidget = Text(
@@ -89,7 +89,11 @@ class NetworkButton extends Button {
       ),
     );
 
-    final double space = isSpinning ? (spacing ?? 8) : (((imagePath != null || iconData != null) && title != null) ? spacing : 0);
+    final double space = isSpinning
+        ? spacing
+        : (((imagePath != null || iconData != null) && title != null)
+            ? spacing
+            : 0);
 
     return SizedBox(
       width: width,
@@ -99,7 +103,7 @@ class NetworkButton extends Button {
         style: ButtonStyle(
           overlayColor: isSpinning
               ? MaterialStatePropertyAll<Color>(
-              backgroundColor.withOpacity(0.0))
+                  backgroundColor.withOpacity(0.0))
               : null,
           elevation: isElevated ? null : MaterialStateProperty.all<double>(4),
           shape: MaterialStateProperty.all<OutlinedBorder>(
@@ -109,18 +113,19 @@ class NetworkButton extends Button {
           ),
           side: isBorderEnabled
               ? MaterialStatePropertyAll<BorderSide>(
-            BorderSide(width: 1.5, color: fontColor ?? Colors.black),
-          )
+                  BorderSide(width: 1.5, color: fontColor ?? Colors.black),
+                )
               : null,
           foregroundColor: MaterialStatePropertyAll<Color>(fontColor!),
           backgroundColor: MaterialStatePropertyAll<Color>(backgroundColor),
-          padding:
-          const MaterialStatePropertyAll<EdgeInsets>(EdgeInsets.symmetric(horizontal: 0)),
+          padding: const MaterialStatePropertyAll<EdgeInsets>(
+              EdgeInsets.symmetric(horizontal: 0)),
         ),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: horizontalPadding ?? 0),
           child: Row(
-            mainAxisSize: isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
+            mainAxisSize:
+                isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
             mainAxisAlignment: alignment,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

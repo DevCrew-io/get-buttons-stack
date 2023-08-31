@@ -89,7 +89,9 @@ class MicrosoftSignInButton extends StatelessWidget {
                 image:
                     AssetImage(ImagePath.msLogo, package: 'get_buttons_stack'),
               ),
-              const SizedBox(width: 12,),
+              const SizedBox(
+                width: 12,
+              ),
               // Text label
               Text(
                 // ignore: unrelated_type_equality_checks

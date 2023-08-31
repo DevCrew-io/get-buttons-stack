@@ -19,7 +19,8 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Flutter Button Stack"), // Title displayed in the app bar.
+        title: const Text(
+            "Flutter Button Stack"), // Title displayed in the app bar.
       ),
       body: Center(
         child: Column(
@@ -48,7 +49,8 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const CustomButtonWithProperties(),
+                        builder: (context) =>
+                            const CustomButtonWithProperties(),
                       ),
                     );
                   },
@@ -68,7 +70,6 @@ class HomePage extends StatelessWidget {
 }
 
 class _MyNetworkButton extends StatefulWidget {
-
   const _MyNetworkButton({super.key});
 
   @override
@@ -76,16 +77,20 @@ class _MyNetworkButton extends StatefulWidget {
 }
 
 class _MyNetworkButtonState extends State<_MyNetworkButton> {
-
   var buttonState = ButtonState.idle;
 
   @override
   Widget build(BuildContext context) {
-    return NetworkButton(title: "Network Spinning", buttonState: buttonState, onPressed: () {
-      setState(() {
-        buttonState = buttonState == ButtonState.spinning ? ButtonState.idle : ButtonState.spinning ;
-      });
-    });
+    return NetworkButton(
+        title: "Network Spinning",
+        iconData: Icons.abc_rounded,
+        buttonState: buttonState,
+        onPressed: () {
+          setState(() {
+            buttonState = buttonState == ButtonState.spinning
+                ? ButtonState.idle
+                : ButtonState.spinning;
+          });
+        });
   }
-
 }

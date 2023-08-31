@@ -1,6 +1,6 @@
 name: get_buttons_stack
-description: A versatile Flutter package offering a collection of customizable buttons, including network buttons with built-in API state indicators and social media media login buttons.
-version: 1.0.0
+description: A collection of customizable buttons, including network buttons with built-in API state indicators and social media media login buttons.
+version: 1.0.2
 homepage: https://github.com/DevCrew-io/get-buttons-stack#readme
 repository: https://github.com/DevCrew-io/get-buttons-stack
 issue_tracker: https://github.com/DevCrew-io/get-buttons-stack/issues

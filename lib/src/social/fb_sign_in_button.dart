@@ -13,15 +13,19 @@ enum ButtonColorTheme {
 class FacebookSignButton extends StatelessWidget {
   // Properties to customize the button appearance and behavior.
   final String title; // The title or label of the button.
-  final bool inCaps; // Flag to indicate if the title should be displayed in all uppercase letters.
+  final bool
+      inCaps; // Flag to indicate if the title should be displayed in all uppercase letters.
   final double radius; // The corner radius of the button.
   final double? width; // The optional width of the button.
   final double height; // The height of the button.
-  final bool isContentWrapped; // Flag to indicate if the content of the button should be wrapped.
-  final bool isTextOnly; // Flag to indicate if the button should display only text.
+  final bool
+      isContentWrapped; // Flag to indicate if the content of the button should be wrapped.
+  final bool
+      isTextOnly; // Flag to indicate if the button should display only text.
   final MainAxisAlignment alignment; // The alignment of the button's content.
   final ButtonColorTheme buttonColorTheme; // The color theme of the button.
-  final VoidCallback onPressed; // Callback function to be executed when the button is pressed.
+  final VoidCallback
+      onPressed; // Callback function to be executed when the button is pressed.
 
   const FacebookSignButton({
     Key? key,
@@ -52,7 +56,10 @@ class FacebookSignButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(radius),
           ),
           // Apply side border if the color theme is white with black or white with blue.
-          side: (buttonColorTheme == ButtonColorTheme.whiteWithBlack || buttonColorTheme == ButtonColorTheme.whiteWithBlue) ? BorderSide(color: foregroundColor, width: 1.0) : null,
+          side: (buttonColorTheme == ButtonColorTheme.whiteWithBlack ||
+                  buttonColorTheme == ButtonColorTheme.whiteWithBlue)
+              ? BorderSide(color: foregroundColor, width: 1.0)
+              : null,
           foregroundColor: foregroundColor,
           backgroundColor: backgroundColor,
           padding: const EdgeInsets.symmetric(horizontal: 0),
@@ -60,7 +67,8 @@ class FacebookSignButton extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Row(
-            mainAxisSize: isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
+            mainAxisSize:
+                isContentWrapped ? MainAxisSize.min : MainAxisSize.max,
             mainAxisAlignment: alignment,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -94,7 +102,7 @@ class FacebookSignButton extends StatelessWidget {
 
   // Set background and foreground colors based on the color theme.
   (Color, Color) _setColorTheme() {
-    switch(buttonColorTheme) {
+    switch (buttonColorTheme) {
       case ButtonColorTheme.blueWithWhite:
         return (const Color(0XFF1877F2), Colors.white);
       case ButtonColorTheme.blackWithWhite:

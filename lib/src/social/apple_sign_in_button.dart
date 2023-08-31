@@ -27,10 +27,8 @@ class AppleSignInButton extends StatelessWidget {
 
   final String? fontFamily;
 
-
   /// The font weight of the title text.
   final FontWeight fontWeight;
-
 
   /// The font size of the title text.
 
@@ -107,16 +105,16 @@ class AppleSignInButton extends StatelessWidget {
                 ),
                 fit: BoxFit.fill,
               ),
-              const SizedBox(width: 12,),
+              const SizedBox(
+                width: 12,
+              ),
               // Text label
               Text(
                 isCaps ? title.toUpperCase() : title,
                 style: TextStyle(
-                  fontSize: (43 / 100 * height).floorToDouble(),
-                  fontWeight: fontWeight,
-                  fontFamily: fontFamily
-
-                ),
+                    fontSize: (43 / 100 * height).floorToDouble(),
+                    fontWeight: fontWeight,
+                    fontFamily: fontFamily),
               ),
             ],
           ),
